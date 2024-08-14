@@ -1,3 +1,5 @@
+
+<?php include('header.php'); ?>
 <?php
 
 // Função para converter uma data no formato dd/mm para um formato que possa ser comparado, incluindo o ano
@@ -31,9 +33,19 @@ foreach ($xml->signo as $signo) {
 
 // Exibe o resultado
 if ($signo_encontrado) {
-    echo "<h1>Seu Signo: " . $signo_encontrado->signoNome . "</h1class=text-center>";
-    echo "<p>" . $signo_encontrado->descricao . "</p>";
+    echo "<h1 class='text-center mb-4 mt-3'>
+Seu Signo: " . $signo_encontrado->signoNome . "</h1>";
+
+    echo "<p class='text-center font-italic border
+     border-primary d-flex justify-content-center font-weight-bold' >"
+     . $signo_encontrado->descricao . "</p>";
+      
+      echo "<a href='index.php'  class='d-flex justify-content-center mt-5 '>
+      Voltar a pagina principal</a>";
+
 } else {
-    echo "<h1>Signo não encontrado.</h1>";
+    echo "<h1 class='text-center mt-4'>Signo não encontrado.</h1>";
+    echo "<a href='index.php'  class='d-flex justify-content-center mt-5 '>
+    Voltar a pagina principal</a>";
 }
 ?>
